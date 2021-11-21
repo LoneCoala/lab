@@ -48,7 +48,7 @@ namespace Virt_lab_25
                         {
                             if (Double.TryParse(dataGridView1.Rows[i].Cells[6].Value.ToString(), out a)) // преобразуем в double 
                             {
-                                if ((a >= 9.7) && (a <= 9.9))
+                                if (a == 9.8)
                                 j++;
                             }
                             else
