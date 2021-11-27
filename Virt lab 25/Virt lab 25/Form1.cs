@@ -15,44 +15,41 @@ namespace Virt_lab_25
     public partial class Form1 : Form
     {
         private bool startButtonClicked = false;
-
-
-
-
+        
+        
+        
+        
         public Form1()
         {
             InitializeComponent();
             pictureBox1.Enabled = false;
-
+         
             // Bob = new Point(Origin.X,(int)Length);
-
+            
             timer1.Interval = 10;
-
-
-        }
-        int quantity = 0; // Счетчик измерений 
-        double Atime = 0; // время 10 колебаний 
+            
+        }        
         private void check_Results_Click(object sender, System.EventArgs e)
         {
             // проверка значений в таблице, сначала проверяю 10 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
             int j = 0;
-            if (dataGridView1.Rows.Count < 6) // проверка на кол-во измерений
+            if (dataGridView1.Rows.Count < 10) // проверка на кол-во измерений
             {
                 showTextBox("Неверное количество измерений", "Сообщение");
             }
             else
             {
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= 9; i++) 
                 {
                     double a = 0;
                     if (dataGridView1.Rows[i].Cells[4].Value == null) // проверка T
                     {
-                        showTextBox("ячейки значений T пусты", "Сообщение");
-                        break;
+                    showTextBox("ячейки значений T пусты", "Сообщение");
+                    break;
                     }
                     else
                     {
-                        if (dataGridView1.Rows[i].Cells[5].Value == null) // проверка g, сначало что не null
+                        if (dataGridView1.Rows[i].Cells[6].Value == null) // проверка g, сначало что не null
                         {
 
                             showTextBox("ячейки значений g пусты", "Сообщение");
@@ -60,10 +57,10 @@ namespace Virt_lab_25
                         }
                         else
                         {
-                            if (Double.TryParse(dataGridView1.Rows[i].Cells[5].Value.ToString(), out a)) // преобразуем в double 
+                            if (Double.TryParse(dataGridView1.Rows[i].Cells[6].Value.ToString(), out a)) // преобразуем в double 
                             {
-                                if (a == 9.8)
-                                    j++;
+                                if ((a >= 9.7) && (a <= 9.9))
+                                j++;
                             }
                             else
                             {
@@ -73,7 +70,7 @@ namespace Virt_lab_25
                         }
                     }
                 }
-                if (j == 6) // если всё преобразовалось то соответсвующее сообщение
+                if (j == 10) // если всё преобразовалось то соответсвующее сообщение
                 {
                     showTextBox("Всё ок", "Сообщение");
                 }
@@ -110,110 +107,98 @@ namespace Virt_lab_25
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
+            Point Origin = new Point(pictureBox1.Width/ 2,0);
+            float Length = length * 3;
+            Point Bob = new Point(Origin.X,(int)Length);
+            
+            Graphics G = pictureBox1.CreateGraphics();
+            Pen pen;
+            float Angle = (float)Math.PI/14;
+            float AnglularVelocity = -0.00f;
+            float AngularAcceleration = 0.0f;
+            
+            timer1.Interval = 10;
 
-            if (quantity <= 5) // проверка на количество измерений 
+
+
+
+            int number = dataGridView1.Rows.Add();
+            startButtonClicked = true;
+            timer1.Enabled = false;
+            timer1.Start();
+            
+            
+            this.Invalidate();
+            double g, l, T, t, n=10;
+            l = Convert.ToDouble(numericUpDown1.Value)/100;
+            Random rand = new Random();
+            g = Convert.ToDouble(9.7+rand.NextDouble()*(9.9-9.7));
+            g = Math.Round(g, 2);
+            T = 2*Math.PI*Math.Sqrt(l / g);
+            T = Math.Round(T, 2);
+            t = T * n;
+            t = Math.Round(t, 2);
+            time = t;
+            period = T;
+            
+            
+            // textBox1.Text = Convert.ToString(t); ?
+            dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
+            dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
+            dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
+            dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
+            dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
+            if (dataGridView1.Rows[number].Cells[4].Value == null)
+                dataGridView1.Rows[number].Cells[5].Value = 0;
+            else
             {
-                quantity++;
-                int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
-                Point Origin = new Point(pictureBox1.Width / 2, 0);
-                float Length = length * 3;
-                Point Bob = new Point(Origin.X, (int)Length);
-
-                Graphics G = pictureBox1.CreateGraphics();
-                Pen pen;
-                float Angle = (float)Math.PI / 2;
-                float AnglularVelocity = -0.01f;
-                float AngularAcceleration = 0.0f;
-
-                timer1.Interval = 10;
-
-
-
-                int number = dataGridView1.Rows.Add();
-
-                startButtonClicked = true;
-                timer1.Enabled = false;
-                timer1.Start();
-
-
-                this.Invalidate();
-                double g, l, T, t, n = 10;
-                l = Convert.ToDouble(numericUpDown1.Value) / 100 + uoi;
-                uoi = uoi + 0.02;
-                g = 9.8;
-                g = Math.Round(g, 2);
-                T = 2 * Math.PI * Math.Sqrt(l / g);
-                T = Math.Round(T, 2);
-                t = T * n;
-                t = Math.Round(t, 2);
-                time = t;
-                period = T;
-                Atime = Atime + time;
-
-                // textBox1.Text = Convert.ToString(t); ?
-                dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
-                dataGridView1.Rows[number].Cells[0].ReadOnly = true; // Блокировка ввода номера опыта
-
-                dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
-                dataGridView1.Rows[number].Cells[1].ReadOnly = true; // Блокировка ввода длины нити 
-
-                dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
-                dataGridView1.Rows[number].Cells[2].ReadOnly = true; // Блокировка ввода времени t
-
-                dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
-                dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
-
-                dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
-
-                dataGridView1.Rows[number].Cells[5].Value = g; // ввод g
-
-                Brush brush = Brushes.Black;
-                pen = new Pen(Color.Black, 5);
+                dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
+            }
+            dataGridView1.Rows[number].Cells[6].Value = g;
+            
+            
+            Brush brush = Brushes.Red;
+            pen = new Pen(Color.Black, 2);
                 do
                 {
-
-                    Bob.X = (int)(Length * Math.Sin(Angle) + Origin.X);
-                    Bob.Y = (int)(Length * Math.Cos(Angle) + Origin.Y);
+                
+                    Bob.X = (int) (Length * Math.Sin(Angle) + Origin.X);
+                    Bob.Y = (int) (Length * Math.Cos(Angle) + Origin.Y);
 
                     Angle += AnglularVelocity;
                     AnglularVelocity += AngularAcceleration;
 
-                    AnglularVelocity *= (float)0.985;
-
+                    AnglularVelocity *= (float) 0.99;
+                
                     //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
                     G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
-                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
+                   // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                    G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
                     Application.DoEvents();
-
-
+                
+                    
                     Thread.Sleep(14);
                     pictureBox1.Refresh();
-                    AngularAcceleration = (float)(-0.005 * Math.Sin(Angle));
-                    G.FillEllipse(brush, Bob.X - 17, Bob.Y - 7, 34, 34);
-                    // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
-
-
+                    AngularAcceleration = (float) (-0.01 * Math.Sin(Angle));
+                    G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
+                   // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+             //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                
+                
                 } while (timer1.Enabled);
-
+                
                 AngularAcceleration = 0;
                 Angle = 0;
                 AnglularVelocity = 0;
-
-            }
-            else
-            {
-                showTextBox("Вы провели максимальное число измерений", "Сообщение");
-            }
         }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Interval = 10;
-
+            
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -223,8 +208,7 @@ namespace Virt_lab_25
             if (!double.TryParse(number.ToString(), out _))
             {
                 return (false);
-            }
-            else
+            } else
             {
                 return (true);
             }
@@ -264,14 +248,7 @@ namespace Virt_lab_25
         }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-           label2.Text = numericUpDown1.Value.ToString();
+            label2.Text = numericUpDown1.Value.ToString();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
     }
 }
