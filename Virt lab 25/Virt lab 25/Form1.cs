@@ -74,7 +74,7 @@ namespace Virt_lab_25
                 {
                     showTextBox("Всё ок", "Сообщение");
                 }
-                else if (j < 10)
+                else if (j < 6)
                 {
                     showTextBox("Неверные значения g", "Сообщение");
                 }
@@ -102,9 +102,9 @@ namespace Virt_lab_25
         }
         double time = 0;
         double period = 1;
-        
-        
-        
+
+        double uoi =0; // переменная на +2 см в рассчеты 
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
@@ -167,7 +167,7 @@ namespace Virt_lab_25
                     Bob.Y = (int) (Length * Math.Cos(Angle) + Origin.Y);
 
                     Angle += AnglularVelocity;
-                   AnglularVelocity += AngularAcceleration;
+                    AnglularVelocity += AngularAcceleration;
 
                     AnglularVelocity *= (float) 0.99;
                 

@@ -35,5 +35,10 @@ namespace Virt_lab_25
         {
             this.Hide();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
