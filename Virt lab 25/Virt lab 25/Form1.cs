@@ -130,10 +130,10 @@ namespace Virt_lab_25
             
             
             this.Invalidate();
-            double g, l, T, t, n=10;
+            double g, l, T, t;
+            const double n=10;
             l = Convert.ToDouble(numericUpDown1.Value)/100;
-            Random rand = new Random();
-            g = Convert.ToDouble(9.7+rand.NextDouble()*(9.9-9.7));
+            g = 9.8;
             g = Math.Round(g, 2);
             T = 2*Math.PI*Math.Sqrt(l / g);
             T = Math.Round(T, 2);
@@ -148,14 +148,13 @@ namespace Virt_lab_25
             dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
             dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
             dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
-            dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
+
             if (dataGridView1.Rows[number].Cells[4].Value == null)
                 dataGridView1.Rows[number].Cells[5].Value = 0;
             else
             {
                 dataGridView1.Rows[number].Cells[5].Value = Math.Pow((double)dataGridView1.Rows[number].Cells[4].Value, 2); // ввод квадрата периода (T^2)
             }
-            dataGridView1.Rows[number].Cells[6].Value = g;
             
             
             Brush brush = Brushes.Black;
