@@ -15,7 +15,7 @@ namespace Virt_lab_25
     public partial class Form1 : Form
     {
         private bool startButtonClicked = false;
-
+        public double f;
 
 
 
@@ -45,6 +45,8 @@ namespace Virt_lab_25
                 for (int i = 0; i <= 5; i++)
                 {
                     double a = 0;
+                    double tmal = Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
+                    double tbolsh = Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
                     if (dataGridView1.Rows[i].Cells[4].Value == null) // проверка T
                     {
                         showTextBox("ячейки значений T пусты", "Сообщение");
@@ -62,8 +64,22 @@ namespace Virt_lab_25
                         {
                             if (Double.TryParse(dataGridView1.Rows[i].Cells[5].Value.ToString(), out a)) // преобразуем в double 
                             {
-                                if (a == 9.8)
-                                    j++;
+                                if ((a == 9.8))
+                                {
+                                    label5.Text = (tmal).ToString();
+                                    label6.Text = (tbolsh).ToString();
+                                    if ((tmal / f) == (tbolsh))
+                                    {
+                                        j++;
+                                        showTextBox("Успешно преобразовали T", "Сообщение");
+                                        Console.WriteLine(tmal);
+                                        Console.WriteLine(tbolsh);
+                                    }
+                                    else
+                                    {
+                                        showTextBox("Плохо преобразовали", "Сообщение");
+                                    }
+                                }
                             }
                             else
                             {
@@ -124,7 +140,8 @@ namespace Virt_lab_25
                 timer1.Enabled = false;
                 timer1.Start();
                 this.Invalidate();
-                double g, l, T, t, n = 10;
+                double g, l, T, t,n;
+                n = (int)f;
                 l = Convert.ToDouble(numericUpDown1.Value) / 100;
                 bool check = false;
                 for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -159,8 +176,10 @@ namespace Virt_lab_25
                     dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
                     dataGridView1.Rows[number].Cells[2].ReadOnly = true; // Блокировка ввода времени t
 
-                    dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
+                    dataGridView1.Rows[number].Cells[3].Value = n; // кол-во колебаний, всегда 10
                     dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
+                    dataGridView1.Rows[number].Cells[4].Value = 0;
+                    dataGridView1.Rows[number].Cells[5].Value = 0;
                 }
                 Brush brush = Brushes.Red;
                 pen = new Pen(Color.Black, 2);
@@ -267,6 +286,14 @@ namespace Virt_lab_25
 
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
