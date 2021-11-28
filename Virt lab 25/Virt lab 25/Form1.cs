@@ -138,10 +138,9 @@ namespace Virt_lab_25
 
                 this.Invalidate();
                 double g, l, T, t, n = 10;
-                l = Convert.ToDouble(numericUpDown1.Value) / 100 + uoi;
-                uoi = uoi + 0.02;
+                l = Convert.ToDouble(numericUpDown1.Value) / 100;
+              //  uoi = uoi + 0.02;
                 g = 9.8;
-                g = Math.Round(g, 2);
                 T = 2 * Math.PI * Math.Sqrt(l / g);
                 T = Math.Round(T, 2);
                 t = T * n;
@@ -162,10 +161,6 @@ namespace Virt_lab_25
 
                 dataGridView1.Rows[number].Cells[3].Value = 10; // кол-во колебаний, всегда 10
                 dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
-
-                dataGridView1.Rows[number].Cells[4].Value = period; // ввод периода T
-
-                dataGridView1.Rows[number].Cells[5].Value = g; // ввод g
 
                 Brush brush = Brushes.Red;
                 pen = new Pen(Color.Black, 2);
