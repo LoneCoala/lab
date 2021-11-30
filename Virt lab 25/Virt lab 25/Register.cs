@@ -16,19 +16,16 @@ namespace Virt_lab_25
         {
             InitializeComponent();
         }
-        public int amountOfFluctationsInput;
+        //public int amountOfFluctationsInput;
 
         private void enterRegister_Click(object sender, EventArgs e)
         {
            if (checkTextBox() && checkTextGroup())
             {
-                if (int.TryParse(textBox1.Text, out amountOfFluctationsInput))
-                {
-
                     string name = textBoxName.Text + " " + textBoxGroup.Text;
                     this.Hide();
                     Form1 form = new Form1();
-                    form.amountOfFluctations = amountOfFluctationsInput;
+                    //form.amountOfFluctations = amountOfFluctationsInput;
                     if (radioButton1.Checked == true)
                     {
                         form.numericUpDown1.Value = 30;
@@ -47,28 +44,7 @@ namespace Virt_lab_25
                 {
                     MessageBox.Show("Не заполнены поля");
                 }
-            }
-        }
-           if (checkTextBox())
-            {
-                string name = textBoxName.Text + " " + textBoxGroup.Text;
-                this.Hide();
-                Form1 form = new Form1();
-                form.name = name;
-                if (radioButton1.Checked == true)
-                {
-                    form.numericUpDown1.Value = 30;
-                    form.numericUpDown1.Minimum = 30;
-                    form.numericUpDown1.Maximum = 40;
-                }
-                else
-                {
-                    form.numericUpDown1.Value = 40;
-                    form.numericUpDown1.Minimum = 40;
-                    form.numericUpDown1.Maximum = 50;
-                }
-                form.Show();
-            }
+            
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)

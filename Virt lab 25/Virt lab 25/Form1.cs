@@ -17,14 +17,11 @@ namespace Virt_lab_25
         private bool startButtonClicked = false;
         public string name = "123123";
 
-
-
-        public bool startButtonClicked = false;
-        public double amountOfFluctations;
+        //public double amountOfFluctations;
         public double solutionForProblemNumber;
         public Form1()
         {
-            
+
             InitializeComponent();
             pictureBox1.Enabled = false;
 
@@ -46,7 +43,7 @@ namespace Virt_lab_25
             }
         }
 
-        bool checkIsEqual(double periodCalculated,double periodInATable)
+        bool checkIsEqual(double periodCalculated, double periodInATable)
         {
             return (periodCalculated == periodInATable);
         }
@@ -58,8 +55,7 @@ namespace Virt_lab_25
             bool isAmountOfDataCorrect = dataGridView1.Rows.Count == 6;
             if (isAmountOfDataCorrect)
             {
-                double g = 0;
-                int amountOfCorrect = 0;
+                //double g = 0;
                 for (int row = 0; row <= 5; row++)
                 {
                     double timeFromTable = converDataFromTable(row, 2);
@@ -68,21 +64,29 @@ namespace Virt_lab_25
 
                     if (isGNotNull)
                     {
-
                         var gForce = converDataFromTable(row, 5);
-                        if (gForce == 9.8 && checkIsEqual(timeFromTable, periodInATable * amountOfFluctations))
+                        if (Convert.ToDouble(dataGridView1.Rows[row].Cells[1].Value) == 0.32)
                         {
-                            showTextBox("Успешно преобразовали T", "Сообщение");
+                            if (gForce == 9.8 && (periodInATable == 1.14))
+                                showTextBox("Успешно преобразовали T", "Сообщение");
+                            else
+                                showTextBox("Плохо преобразовали", "Сообщение");
                         }
                         else
                         {
-                            showTextBox("Плохо преобразовали", "Сообщение");
+                            if (gForce == 9.8 && checkIsEqual(timeFromTable, periodInATable * 10))
+                            {
+                                showTextBox("Успешно преобразовали T", "Сообщение");
+                            }
+                            else
+                            {
+                                showTextBox("Плохо преобразовали", "Сообщение");
+                            }
                         }
-
                     }
 
                 }
-                showTextBox("OK", "Сообщение");
+                // showTextBox("OK", "Сообщение");
 
             }
             else
@@ -95,7 +99,7 @@ namespace Virt_lab_25
 
         int quantity = 0; // Счетчик измерений 
         double Atime = 0; // время 10 колебаний 
-        
+
         bool checkGValue(float amountOfFluctations, float tsmall, float tbig)
         {
             if ((tsmall / amountOfFluctations) == tbig)
@@ -147,15 +151,16 @@ namespace Virt_lab_25
                 timer1.Enabled = false;
                 timer1.Start();
                 this.Invalidate();
-                double g, l, T, t,n;
+                double g, l, T, t, n;
                 Register reg = new Register();
-                n = reg.amountOfFluctationsInput;
-                n = (int)amountOfFluctations;
+                //n = reg.amountOfFluctationsInput;
+                n = 10;
+                //n = (int)amountOfFluctations;
                 l = Convert.ToDouble(numericUpDown1.Value) / 100;
                 bool check = false;
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    if ( l == Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value))
+                    if (l == Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value))
                     {
                         showTextBox("Вы уже провели измерение с данной длиной", "Сообщение");
                         check = true;
@@ -291,7 +296,7 @@ namespace Virt_lab_25
         }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-           label2.Text = numericUpDown1.Value.ToString();
+            label2.Text = numericUpDown1.Value.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -306,6 +311,7 @@ namespace Virt_lab_25
 
         private void label5_Click(object sender, EventArgs e)
         {
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
