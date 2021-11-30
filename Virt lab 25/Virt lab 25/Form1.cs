@@ -14,16 +14,22 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
+        private bool startButtonClicked = false;
+        public string name = "123123";
+
+
+
         public bool startButtonClicked = false;
         public double amountOfFluctations;
         public double solutionForProblemNumber;
         public Form1()
         {
+            
             InitializeComponent();
             pictureBox1.Enabled = false;
 
             // Bob = new Point(Origin.X,(int)Length);
-
+            label4.Text = name;
             timer1.Interval = 10;
         }
 
@@ -301,6 +307,11 @@ namespace Virt_lab_25
         private void label5_Click(object sender, EventArgs e)
         {
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Protocol protocol = new Protocol();
+            protocol.fullName = name;
+            protocol.Show();
         }
     }
 }
