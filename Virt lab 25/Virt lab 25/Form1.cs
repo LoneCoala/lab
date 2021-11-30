@@ -14,11 +14,9 @@ namespace Virt_lab_25
     //Application.Run(new Register());
     public partial class Form1 : Form
     {
-        private bool startButtonClicked = false;
-        public double f;
-
-
-
+        public bool startButtonClicked = false;
+        public double amountOfFluctations;
+        public double solutionForProblemNumber;
         public Form1()
         {
             InitializeComponent();
@@ -27,76 +25,80 @@ namespace Virt_lab_25
             // Bob = new Point(Origin.X,(int)Length);
 
             timer1.Interval = 10;
-
-
         }
-        int quantity = 0; // Счетчик измерений 
-        double Atime = 0; // время 10 колебаний 
-        private void check_Results_Click(object sender, System.EventArgs e)
+
+        private dynamic converDataFromTable(int row, int column)
         {
-            // проверка значений в таблице, сначала проверяю 10 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
-            int j = 0;
-            if (dataGridView1.Rows.Count < 6) // проверка на кол-во измерений
+            if (dataGridView1.Rows[row].Cells[column].Value == null)
             {
-                showTextBox("Неверное количество измерений", "Сообщение");
+                showTextBox("ячейки значений T пусты", "Сообщение");
+                return null;
             }
             else
             {
-                for (int i = 0; i <= 5; i++)
-                {
-                    double a = 0;
-                    double tmal = Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
-                    double tbolsh = Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
-                    if (dataGridView1.Rows[i].Cells[4].Value == null) // проверка T
-                    {
-                        showTextBox("ячейки значений T пусты", "Сообщение");
-                        break;
-                    }
-                    else
-                    {
-                        if (dataGridView1.Rows[i].Cells[5].Value == null) // проверка g, сначало что не null
-                        {
+                return (Convert.ToDouble(dataGridView1.Rows[row].Cells[column].Value));
+            }
+        }
 
-                            showTextBox("ячейки значений g пусты", "Сообщение");
-                            break;
+        bool checkIsEqual(double periodCalculated,double periodInATable)
+        {
+            return (periodCalculated == periodInATable);
+        }
+
+        private void check_Results_Click(object sender, System.EventArgs e)
+        {
+            Register reg = new Register();
+            // проверка значений в таблице, сначала проверяю 6 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
+            bool isAmountOfDataCorrect = dataGridView1.Rows.Count == 6;
+            if (isAmountOfDataCorrect)
+            {
+                double g = 0;
+                int amountOfCorrect = 0;
+                for (int row = 0; row <= 5; row++)
+                {
+                    double timeFromTable = converDataFromTable(row, 2);
+                    double periodInATable = converDataFromTable(row, 4);
+                    bool isGNotNull = dataGridView1.Rows[row].Cells[5].Value != null;
+
+                    if (isGNotNull)
+                    {
+
+                        var gForce = converDataFromTable(row, 5);
+                        if (gForce == 9.8 && checkIsEqual(timeFromTable, periodInATable * amountOfFluctations))
+                        {
+                            showTextBox("Успешно преобразовали T", "Сообщение");
                         }
                         else
                         {
-                            if (Double.TryParse(dataGridView1.Rows[i].Cells[5].Value.ToString(), out a)) // преобразуем в double 
-                            {
-                                if ((a == 9.8))
-                                {
-                                    label5.Text = (tmal).ToString();
-                                    label6.Text = (tbolsh).ToString();
-                                    if ((tmal / f) == (tbolsh))
-                                    {
-                                        j++;
-                                        showTextBox("Успешно преобразовали T", "Сообщение");
-                                        Console.WriteLine(tmal);
-                                        Console.WriteLine(tbolsh);
-                                    }
-                                    else
-                                    {
-                                        showTextBox("Плохо преобразовали", "Сообщение");
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                showTextBox("Не удалось преобразовать", "Сообщение");
-                                break;
-                            }
+                            showTextBox("Плохо преобразовали", "Сообщение");
                         }
+
                     }
+
                 }
-                if (j == 6) // если всё преобразовалось то соответсвующее сообщение
-                {
-                    showTextBox("Всё ок", "Сообщение");
-                }
-                else if (j < 6)
-                {
-                    showTextBox("Неверные значения g", "Сообщение");
-                }
+                showTextBox("OK", "Сообщение");
+
+            }
+            else
+            {
+                showTextBox("ERROR", "КОЛ-ВА ИЗМЕРЕНИЙ НЕ СООТВЕТСВУЮТ ДРУГ ДРУГУ");
+            }
+        }
+
+
+
+        int quantity = 0; // Счетчик измерений 
+        double Atime = 0; // время 10 колебаний 
+        
+        bool checkGValue(float amountOfFluctations, float tsmall, float tbig)
+        {
+            if ((tsmall / amountOfFluctations) == tbig)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -120,7 +122,6 @@ namespace Virt_lab_25
             taskList.Show();
         }
         double time = 0;
-
         private void button2_Click_1(object sender, EventArgs e)
         {
 
@@ -141,7 +142,9 @@ namespace Virt_lab_25
                 timer1.Start();
                 this.Invalidate();
                 double g, l, T, t,n;
-                n = (int)f;
+                Register reg = new Register();
+                n = reg.amountOfFluctationsInput;
+                n = (int)amountOfFluctations;
                 l = Convert.ToDouble(numericUpDown1.Value) / 100;
                 bool check = false;
                 for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -163,6 +166,10 @@ namespace Virt_lab_25
                     T = Math.Round(T, 2);
                     t = T * n;
                     t = Math.Round(t, 2);
+                    if (l == 0.32)
+                    {
+                        solutionForProblemNumber = T;
+                    }
                     time = t;
                     Atime = Atime + time;
 

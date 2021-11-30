@@ -16,18 +16,19 @@ namespace Virt_lab_25
         {
             InitializeComponent();
         }
-        int a = 10;
+        public int amountOfFluctationsInput;
+
         private void enterRegister_Click(object sender, EventArgs e)
         {
            if (checkTextBox() && checkTextGroup())
             {
-                if (int.TryParse(textBox1.Text, out a))
+                if (int.TryParse(textBox1.Text, out amountOfFluctationsInput))
                 {
 
                     string name = textBoxName.Text + " " + textBoxGroup.Text;
                     this.Hide();
                     Form1 form = new Form1();
-                    form.f = a;
+                    form.amountOfFluctations = amountOfFluctationsInput;
                     if (radioButton1.Checked == true)
                     {
                         form.numericUpDown1.Value = 30;
