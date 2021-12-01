@@ -1,6 +1,8 @@
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Security;
@@ -11,9 +13,14 @@ namespace Virt_lab_25
     public partial class Protocol : Form
     {
         string key = "b22ca5898a4e4133bbce2ea2322a1916";
-        string encryptedString = "";
+        string[] encryptedString = new string[3];
         string decryptedString = "";
         public string fullName = "";
+        public string groupName = "";
+        public int countErrors = 0;
+        public string fullnameDecrypted = "";
+        public string groupNameDecrypted = "";
+        public string countErrorsDecrypted = "";
         
         public Protocol()
         {
@@ -22,7 +29,15 @@ namespace Virt_lab_25
 
         private void Protocol_Load(object sender, EventArgs e)
         {
-            label1.Text = fullName;
+            if (countErrors == 0)
+            {
+                label1.Text = "ФИО:  " + fullName +"\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + countErrors.ToString();
+            }
+            else
+            {
+                label1.Text = "ФИО:  " + fullName +"\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + countErrors.ToString();
+            }
+            
         }
 
         private void exportProtocol_Click(object sender, EventArgs e)
@@ -30,12 +45,16 @@ namespace Virt_lab_25
             var str = label1.Text;
             var encryptedString = AesOperation.EncryptString(key, str);
 
-            var decryptedString = AesOperation.DecryptString(key, encryptedString);
-            
-            this.encryptedString = encryptedString;
+            var nameEncrypted = AesOperation.EncryptString(key, fullName);
+            var groupNameEncrypted = AesOperation.EncryptString(key, groupName);
+            var countErrorsEncrypted = AesOperation.EncryptString(key, countErrors.ToString());
 
+            string[] encryptedStrings = new string[] { nameEncrypted, groupNameEncrypted, countErrorsEncrypted };
 
-            System.IO.File.WriteAllText("protocol.prot", encryptedString);
+            this.encryptedString = encryptedStrings;
+
+            //System.IO.File.WriteAllText("protocol.prot", encryptedStrings);
+            File.WriteAllLines(fullName + "_" + groupName + ".prot", encryptedStrings);
 
             MessageBox.Show("Протокол выгружен в папку с программой");
         }
@@ -49,11 +68,25 @@ namespace Virt_lab_25
                     var sr = new StreamReader(openFileDialog1.FileName);
                     if (Path.GetExtension(openFileDialog1.FileName) == ".prot")
                     {
-                        this.decryptedString = AesOperation.DecryptString(key, sr.ReadToEnd());
+                        var list = new List<string>();
+                        while(!sr.EndOfStream)
+                        {
+                            string line = sr.ReadLine();
+                            list.Add(line);
+                            Console.WriteLine(list[list.Count-1]);
+                        }
+                        
+                        var arrTheoria = list.ToArray();
+
+                        this.fullnameDecrypted = AesOperation.DecryptString(key, arrTheoria[0]);
+                        this.groupNameDecrypted = AesOperation.DecryptString(key, arrTheoria[1]);
+                        this.countErrorsDecrypted = AesOperation.DecryptString(key, arrTheoria[2]);
+                        
                         MessageBox.Show("Протокол загружен");
                     } else
                     {
                         MessageBox.Show("Не поддерживаемый файл");
+                        return;
                     }
                     
                     sr.Close();
@@ -65,7 +98,16 @@ namespace Virt_lab_25
                 }
             }
             //var decryptedString = AesOperation.DecryptString(key, File.ReadAllText("protocol.prot"));
-            label1.Text = this.decryptedString;
+
+            if (Convert.ToInt32(this.countErrorsDecrypted) == 0)
+            {
+                label1.Text = "ФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
+            }
+            else
+            {
+                label1.Text = "ФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
+            }
+            
         }
     }
     

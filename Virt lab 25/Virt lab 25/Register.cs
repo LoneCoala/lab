@@ -22,9 +22,13 @@ namespace Virt_lab_25
         {
            if (checkTextBox() && checkTextGroup())
             {
-                    string name = textBoxName.Text + " " + textBoxGroup.Text;
+                    string name = textBoxName.Text;
+                    string group = textBoxGroup.Text;
                     this.Hide();
                     Form1 form = new Form1();
+
+                    form.name = name;
+                    form.groupName = group;
                     //form.amountOfFluctations = amountOfFluctationsInput;
                     if (radioButton1.Checked == true)
                     {

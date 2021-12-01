@@ -16,6 +16,8 @@ namespace Virt_lab_25
     {
         private bool startButtonClicked = false;
         public string name = "123123";
+        public string groupName = "";
+        private int countErrors = 0;
 
         //public double amountOfFluctations;
         public double solutionForProblemNumber;
@@ -70,7 +72,10 @@ namespace Virt_lab_25
                             if (gForce == 9.8 && (periodInATable == 1.14))
                                 showTextBox("Успешно преобразовали T", "Сообщение");
                             else
+                            {
                                 showTextBox("Плохо преобразовали", "Сообщение");
+                                countErrors++;
+                            }
                         }
                         else
                         {
@@ -81,6 +86,7 @@ namespace Virt_lab_25
                             else
                             {
                                 showTextBox("Плохо преобразовали", "Сообщение");
+                                countErrors++;
                             }
                         }
                     }
@@ -92,6 +98,7 @@ namespace Virt_lab_25
             else
             {
                 showTextBox("ERROR", "КОЛ-ВА ИЗМЕРЕНИЙ НЕ СООТВЕТСВУЮТ ДРУГ ДРУГУ");
+                countErrors++;
             }
         }
 
@@ -317,6 +324,8 @@ namespace Virt_lab_25
         {
             Protocol protocol = new Protocol();
             protocol.fullName = name;
+            protocol.groupName = groupName;
+            protocol.countErrors = countErrors;
             protocol.Show();
         }
     }
