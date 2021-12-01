@@ -40,5 +40,10 @@ namespace Virt_lab_25
         {
 
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

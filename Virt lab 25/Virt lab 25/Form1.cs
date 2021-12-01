@@ -18,6 +18,7 @@ namespace Virt_lab_25
         public string name = "123123";
         public string groupName = "";
         private int countErrors = 0;
+        public bool isChechResultsClicked = false;
 
         //public double amountOfFluctations;
         public double solutionForProblemNumber;
@@ -52,6 +53,7 @@ namespace Virt_lab_25
 
         private void check_Results_Click(object sender, System.EventArgs e)
         {
+            isChechResultsClicked = true; // Переменная отвечающая за то, были результаты проверены или нет.
             Register reg = new Register();
             // проверка значений в таблице, сначала проверяю 6 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
             bool isAmountOfDataCorrect = dataGridView1.Rows.Count == 6;
@@ -70,10 +72,36 @@ namespace Virt_lab_25
                         if (Convert.ToDouble(dataGridView1.Rows[row].Cells[1].Value) == 0.32)
                         {
                             if (gForce == 9.8 && (periodInATable == 1.14))
-                                showTextBox("Успешно преобразовали T", "Сообщение");
+                            {
+                                //showTextBox("Успешно преобразовали T", "Сообщение");
+                            }
                             else
                             {
-                                showTextBox("Плохо преобразовали", "Сообщение");
+                                //showTextBox("Плохо преобразовали", "Сообщение");
+                                countErrors++;
+                            }
+                        }
+                        else if (Convert.ToDouble(dataGridView1.Rows[row].Cells[1].Value) == 0.46)
+                        {
+                            if (gForce == 9.8 && (periodInATable == 1.36))
+                            {
+                                 //showTextBox("Успешно преобразовали T", "Сообщение");
+                            }
+                            else
+                            {
+                                //showTextBox("Плохо преобразовали", "Сообщение");
+                                countErrors++;
+                            }
+                        }
+                        else if (Convert.ToDouble(dataGridView1.Rows[row].Cells[1].Value) == 0.48)
+                        {
+                            if (gForce == 9.8 && (periodInATable == 1.39))
+                            {
+                                //showTextBox("Успешно преобразовали T", "Сообщение");
+                            }
+                            else
+                            {
+                                //showTextBox("Плохо преобразовали", "Сообщение");
                                 countErrors++;
                             }
                         }
@@ -81,11 +109,11 @@ namespace Virt_lab_25
                         {
                             if (gForce == 9.8 && checkIsEqual(timeFromTable, periodInATable * 10))
                             {
-                                showTextBox("Успешно преобразовали T", "Сообщение");
+                               //showTextBox("Успешно преобразовали T", "Сообщение");
                             }
                             else
                             {
-                                showTextBox("Плохо преобразовали", "Сообщение");
+                                //showTextBox("Плохо преобразовали", "Сообщение");
                                 countErrors++;
                             }
                         }
@@ -93,6 +121,10 @@ namespace Virt_lab_25
 
                 }
                 // showTextBox("OK", "Сообщение");
+                if (countErrors==0)
+                {
+                    showTextBox("Поздравляем", "Ошибок нет!");
+                }
 
             }
             else
@@ -122,11 +154,6 @@ namespace Virt_lab_25
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
-        {
-
         }
         Form3 metodichka = new Form3();
         private void button3_Click(object sender, EventArgs e)
@@ -322,11 +349,18 @@ namespace Virt_lab_25
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Protocol protocol = new Protocol();
-            protocol.fullName = name;
-            protocol.groupName = groupName;
-            protocol.countErrors = countErrors;
-            protocol.Show();
+            if (isChechResultsClicked == true)
+            {
+                Protocol protocol = new Protocol();
+                protocol.fullName = name;
+                protocol.groupName = groupName;
+                protocol.countErrors = countErrors;
+                protocol.Show();
+            }
+            else
+            {
+                showTextBox("Проверьте результаты", "Пожалуйста");
+            }
         }
     }
 }

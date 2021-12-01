@@ -29,14 +29,15 @@ namespace Virt_lab_25
 
         private void Protocol_Load(object sender, EventArgs e)
         {
-            if (countErrors == 0)
-            {
-                label1.Text = "ФИО:  " + fullName +"\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + countErrors.ToString();
-            }
-            else
-            {
-                label1.Text = "ФИО:  " + fullName +"\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + countErrors.ToString();
-            }
+                if (countErrors == 0)
+                {
+                    label1.Text = "ФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + countErrors.ToString();
+                }
+                else
+                {
+                    label1.Text = "ФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + countErrors.ToString();
+                }
+
             
         }
 
