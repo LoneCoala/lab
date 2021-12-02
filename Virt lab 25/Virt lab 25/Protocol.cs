@@ -18,9 +18,9 @@ namespace Virt_lab_25
         string[] encryptedString = new string[5];
         
         string decryptedString = "";
+        
         public string fullName = "";
         public string groupName = "";
-        public int countErrors = 0;
         public string workName = "Лаб. Работа №25";
         
         public string fullnameDecrypted = "";
@@ -28,6 +28,14 @@ namespace Virt_lab_25
         public string countErrorsDecrypted = "";
         public string workNameDecrypted = "";
         public string currentDateDecrypted = "";
+        public string minimumLenghtDecrypted = "";
+        public string maximumLenghtDecrypted = "";
+        
+        public int countErrors = 0;
+        public int minimumLenght = 0;
+        public int maximumLenght = 0;
+
+        public bool isWorkWasSuccess = false;
         
         public Protocol()
         {
@@ -38,14 +46,23 @@ namespace Virt_lab_25
 
         private void Protocol_Load(object sender, EventArgs e)
         {
+            if (isWorkWasSuccess)
+            {
                 if (countErrors == 0)
                 {
-                    label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + countErrors.ToString();
+                    label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nРабота проводилась при длине нити от " + minimumLenght.ToString() + " до " + maximumLenght.ToString() + "\nКоличество ошибок: " + countErrors.ToString();
                 }
                 else
                 {
-                    label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + countErrors.ToString();
+                    label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nРабота проводилась при длине нити от " + minimumLenght.ToString() + " до " + maximumLenght.ToString() +  "\nКоличество ошибок: " + countErrors.ToString();
                 }
+            }
+            else
+            {
+                label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена не до конца/не выполнена." ;
+                exportProtocol.Enabled = false;
+            }
+                
 
             
         }
@@ -60,8 +77,10 @@ namespace Virt_lab_25
             var countErrorsEncrypted = AesOperation.EncryptString(key, countErrors.ToString());
             var workNameEncrypted = AesOperation.EncryptString(key, workName);
             var currentDateEncrypted = AesOperation.EncryptString(key, currentDate.ToString());
+            var minimumLenghtEncrypted = AesOperation.EncryptString(key, minimumLenght.ToString());
+            var maximumLenghtEncrypted = AesOperation.EncryptString(key, maximumLenght.ToString());
 
-            string[] encryptedStrings = new string[] { nameEncrypted, groupNameEncrypted, countErrorsEncrypted, workNameEncrypted, currentDateEncrypted };
+            string[] encryptedStrings = new string[] { nameEncrypted, groupNameEncrypted, countErrorsEncrypted, workNameEncrypted, currentDateEncrypted, minimumLenghtEncrypted, maximumLenghtEncrypted };
 
             this.encryptedString = encryptedStrings;
 
@@ -94,6 +113,8 @@ namespace Virt_lab_25
                         this.countErrorsDecrypted = AesOperation.DecryptString(key, arrTheoria[2]);
                         this.workNameDecrypted = AesOperation.DecryptString(key, arrTheoria[3]);
                         this.currentDateDecrypted = AesOperation.DecryptString(key, arrTheoria[4]);
+                        this.minimumLenghtDecrypted = AesOperation.DecryptString(key, arrTheoria[5]);
+                        this.maximumLenghtDecrypted = AesOperation.DecryptString(key, arrTheoria[6]);
                         
                         MessageBox.Show("Протокол загружен");
                     } else
@@ -106,11 +127,11 @@ namespace Virt_lab_25
                     
                     if (Convert.ToInt32(this.countErrorsDecrypted) == 0)
                     {
-                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" + this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
+                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" + this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена успешно." + "\nРабота проводилась при длине нити от " + minimumLenghtDecrypted + " до " + maximumLenghtDecrypted + "\nКоличество ошибок: " + this.countErrorsDecrypted;
                     }
                     else
                     {
-                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" + this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
+                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" + this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена с ошибками." + "\nРабота проводилась при длине нити от " + minimumLenghtDecrypted + " до " + maximumLenghtDecrypted + "\nКоличество ошибок: " + this.countErrorsDecrypted;
                     }
                 }
                 catch (SecurityException ex)
