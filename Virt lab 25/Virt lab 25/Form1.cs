@@ -17,7 +17,11 @@ namespace Virt_lab_25
         private bool startButtonClicked = false;
         public string name = "Пишите T с двумя знаками после запятой, а g с одним";
         public string groupName = "";
+
+        public int minimumLenght = 0;
+        public int maximumLenght = 0;
         private int countErrors = 0;
+        
         public bool isChechResultsClicked = false;
         public bool isWorkWasSuccess = false;
 
@@ -29,8 +33,6 @@ namespace Virt_lab_25
             InitializeComponent();
             pictureBox1.Enabled = false;
             pictureBox6.BackColor = Color.Transparent;
-            // Bob = new Point(Origin.X,(int)Length);
-            //label4.Text = name;
             timer1.Interval = 10;
         }
 
@@ -129,11 +131,12 @@ namespace Virt_lab_25
                 // showTextBox("OK", "Сообщение");
                 if (countErrorRightNow == 0)
                 {
-                    showTextBox("Поздравляем!", "Ошибок нет!");
+                    MessageBox.Show("Ошибок нет!");
                     isWorkWasSuccess = true;
                 }
                 else
                 {
+                    isWorkWasSuccess = false;
                     showTextBox("Работа проведена с ошибками!", "Сообщение");
                 }
 
@@ -372,10 +375,16 @@ namespace Virt_lab_25
         {
             if (isChechResultsClicked == true)
             {
+                minimumLenght = Convert.ToInt32(numericUpDown1.Minimum);
+                maximumLenght = Convert.ToInt32(numericUpDown1.Maximum);
+                
                 Protocol protocol = new Protocol();
                 protocol.fullName = name;
                 protocol.groupName = groupName;
                 protocol.countErrors = countErrors;
+                protocol.isWorkWasSuccess = this.isWorkWasSuccess;
+                protocol.minimumLenght = minimumLenght;
+                protocol.maximumLenght = maximumLenght;
                 protocol.Show();
             }
             else
