@@ -95,7 +95,7 @@ namespace Virt_lab_25
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(637, 372);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -135,15 +135,31 @@ namespace Virt_lab_25
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Increment = new decimal(new int[] {2, 0, 0, 0});
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             this.numericUpDown1.Location = new System.Drawing.Point(572, 370);
-            this.numericUpDown1.Maximum = new decimal(new int[] {50, 0, 0, 0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {30, 0, 0, 0});
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
             this.numericUpDown1.TabIndex = 14;
-            this.numericUpDown1.Value = new decimal(new int[] {30, 0, 0, 0});
+            this.numericUpDown1.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // dataGridView1
@@ -151,7 +167,13 @@ namespace Virt_lab_25
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.nomer, this.l, this.Column1, this.n, this.T, this.g});
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomer,
+            this.l,
+            this.Column1,
+            this.n,
+            this.T,
+            this.g});
             this.dataGridView1.Location = new System.Drawing.Point(12, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 10;
@@ -228,7 +250,7 @@ namespace Virt_lab_25
             // 
             this.stringlong.BackColor = System.Drawing.Color.White;
             this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stringlong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.stringlong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stringlong.Location = new System.Drawing.Point(572, 391);
             this.stringlong.Name = "stringlong";
             this.stringlong.ReadOnly = true;
@@ -258,7 +280,7 @@ namespace Virt_lab_25
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 50);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Округляйте числа T до двух знаков после запятой, а g до одного";
+            this.label4.Text = "Пишите T с двумя знаками после запятой, а g с одним";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox6
@@ -323,37 +345,6 @@ namespace Virt_lab_25
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label3.Location = new System.Drawing.Point(12, 325);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 20);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Формулы для рассчета:";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Virt_lab_25.Properties.Resources.Screenshot_2;
-            this.pictureBox5.Location = new System.Drawing.Point(366, 227);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(43, 42);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 26;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(228, 355);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(280, 50);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Пишите T с двумя знаками после запятой, а g с одним";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,6 +389,7 @@ namespace Virt_lab_25
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label label4;
