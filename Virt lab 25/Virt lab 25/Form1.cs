@@ -15,7 +15,7 @@ namespace Virt_lab_25
     public partial class Form1 : Form
     {
         private bool startButtonClicked = false;
-        public string name = "123123";
+        public string name = "Пишите T с двумя знаками после запятой, а g с одним";
         public string groupName = "";
         private int countErrors = 0;
         public bool isChechResultsClicked = false;
@@ -233,7 +233,7 @@ namespace Virt_lab_25
                     dataGridView1.Rows[number].Cells[4].Value = 0;
                     dataGridView1.Rows[number].Cells[5].Value = 0;
                 }
-                Brush brush = Brushes.Red;
+                Brush brush = Brushes.Gray;
                 pen = new Pen(Color.Black, 2);
                 do
                 {

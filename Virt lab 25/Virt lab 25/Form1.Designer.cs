@@ -60,15 +60,15 @@ namespace Virt_lab_25
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timer4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timer4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // closemain
@@ -95,7 +95,7 @@ namespace Virt_lab_25
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.textBox3.Location = new System.Drawing.Point(637, 372);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -135,31 +135,15 @@ namespace Virt_lab_25
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.numericUpDown1.Increment = new decimal(new int[] {2, 0, 0, 0});
             this.numericUpDown1.Location = new System.Drawing.Point(572, 370);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
+            this.numericUpDown1.Maximum = new decimal(new int[] {50, 0, 0, 0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {30, 0, 0, 0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
             this.numericUpDown1.TabIndex = 14;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
+            this.numericUpDown1.Value = new decimal(new int[] {30, 0, 0, 0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // dataGridView1
@@ -167,13 +151,7 @@ namespace Virt_lab_25
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomer,
-            this.l,
-            this.Column1,
-            this.n,
-            this.T,
-            this.g});
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.nomer, this.l, this.Column1, this.n, this.T, this.g});
             this.dataGridView1.Location = new System.Drawing.Point(12, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 10;
@@ -250,7 +228,7 @@ namespace Virt_lab_25
             // 
             this.stringlong.BackColor = System.Drawing.Color.White;
             this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stringlong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.stringlong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.stringlong.Location = new System.Drawing.Point(572, 391);
             this.stringlong.Name = "stringlong";
             this.stringlong.ReadOnly = true;
@@ -325,7 +303,7 @@ namespace Virt_lab_25
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label3.Location = new System.Drawing.Point(12, 325);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(214, 20);
@@ -351,7 +329,7 @@ namespace Virt_lab_25
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 50);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Округляйте число до одного знака после запятой";
+            this.label4.Text = "Пишите T с двумя знаками после запятой, а g с одним";
             // 
             // Form1
             // 
@@ -386,18 +364,17 @@ namespace Virt_lab_25
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №25";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timer4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timer4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.Label label4;
