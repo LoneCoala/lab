@@ -93,6 +93,36 @@ namespace Virt_lab_25.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap красный_треугольник_без_фона {
+            get {
+                object obj = ResourceManager.GetObject("красный треугольник без фона", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap красный_треугольник_без_фона1 {
+            get {
+                object obj = ResourceManager.GetObject("красный треугольник без фона1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap красный_треугольник_без_фона2 {
+            get {
+                object obj = ResourceManager.GetObject("красный треугольник без фона2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap маятник {
             get {
                 object obj = ResourceManager.GetObject("маятник", resourceCulture);
