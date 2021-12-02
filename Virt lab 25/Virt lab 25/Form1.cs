@@ -24,10 +24,10 @@ namespace Virt_lab_25
         public double solutionForProblemNumber;
         public Form1()
         {
-
+            
             InitializeComponent();
             pictureBox1.Enabled = false;
-
+            pictureBox6.BackColor = Color.Transparent;
             // Bob = new Point(Origin.X,(int)Length);
             label4.Text = name;
             timer1.Interval = 10;
@@ -328,9 +328,19 @@ namespace Virt_lab_25
         {
 
         }
+        decimal numericValue = 30;
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            label2.Text = numericUpDown1.Value.ToString();
+            if (numericUpDown1.Value > numericValue)
+            {
+                pictureBox6.Top = pictureBox6.Top + 5;
+            }
+            else
+            {
+                pictureBox6.Top = pictureBox6.Top - 5;
+            }
+            numericValue = numericUpDown1.Value;
+            //label2.Text = numericUpDown1.Value.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
