@@ -29,7 +29,7 @@ namespace Virt_lab_25
             pictureBox1.Enabled = false;
             pictureBox6.BackColor = Color.Transparent;
             // Bob = new Point(Origin.X,(int)Length);
-            label4.Text = name;
+            //label4.Text = name;
             timer1.Interval = 10;
         }
 
@@ -371,6 +371,11 @@ namespace Virt_lab_25
             {
                 showTextBox("Проверьте результаты", "Пожалуйста");
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -280,16 +280,17 @@ namespace Virt_lab_25
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 50);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Округляйте число до одного знака после запятой";
+            this.label4.Text = "Округляйте числа T до двух знаков после запятой, а g до одного";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = global::Virt_lab_25.Properties.Resources.красный_треугольник_без_фона;
             this.pictureBox6.Image = global::Virt_lab_25.Properties.Resources.красный_треугольник_без_фона2;
-            this.pictureBox6.Location = new System.Drawing.Point(398, 163);
+            this.pictureBox6.Location = new System.Drawing.Point(391, 163);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(65, 17);
+            this.pictureBox6.Size = new System.Drawing.Size(72, 11);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox6.TabIndex = 28;
             this.pictureBox6.TabStop = false;
