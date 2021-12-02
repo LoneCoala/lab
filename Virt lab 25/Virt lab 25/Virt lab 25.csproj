@@ -160,13 +160,7 @@
     <None Include="Resources\T.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\красный треугольник без фона.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\красный треугольник без фона1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\красный треугольник без фона2.png" />
+    <Content Include="Resources\vipoln.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

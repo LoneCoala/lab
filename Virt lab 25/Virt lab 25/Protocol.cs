@@ -12,30 +12,39 @@ namespace Virt_lab_25
 {
     public partial class Protocol : Form
     {
+        DateTime currentDate = DateTime.Now;
+        
         string key = "b22ca5898a4e4133bbce2ea2322a1916";
-        string[] encryptedString = new string[3];
+        string[] encryptedString = new string[5];
+        
         string decryptedString = "";
         public string fullName = "";
         public string groupName = "";
         public int countErrors = 0;
+        public string workName = "Лаб. Работа №25";
+        
         public string fullnameDecrypted = "";
         public string groupNameDecrypted = "";
         public string countErrorsDecrypted = "";
+        public string workNameDecrypted = "";
+        public string currentDateDecrypted = "";
         
         public Protocol()
         {
             InitializeComponent();
+            MaximizeBox = false;
+
         }
 
         private void Protocol_Load(object sender, EventArgs e)
         {
                 if (countErrors == 0)
                 {
-                    label1.Text = "ФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + countErrors.ToString();
+                    label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + countErrors.ToString();
                 }
                 else
                 {
-                    label1.Text = "ФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + countErrors.ToString();
+                    label1.Text = "Время выполнения работы: " + currentDate + "\n" + workName + "\nФИО:  " + fullName + "\nГруппа: " + groupName + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + countErrors.ToString();
                 }
 
             
@@ -49,13 +58,15 @@ namespace Virt_lab_25
             var nameEncrypted = AesOperation.EncryptString(key, fullName);
             var groupNameEncrypted = AesOperation.EncryptString(key, groupName);
             var countErrorsEncrypted = AesOperation.EncryptString(key, countErrors.ToString());
+            var workNameEncrypted = AesOperation.EncryptString(key, workName);
+            var currentDateEncrypted = AesOperation.EncryptString(key, currentDate.ToString());
 
-            string[] encryptedStrings = new string[] { nameEncrypted, groupNameEncrypted, countErrorsEncrypted };
+            string[] encryptedStrings = new string[] { nameEncrypted, groupNameEncrypted, countErrorsEncrypted, workNameEncrypted, currentDateEncrypted };
 
             this.encryptedString = encryptedStrings;
 
             //System.IO.File.WriteAllText("protocol.prot", encryptedStrings);
-            File.WriteAllLines(fullName + "_" + groupName + ".prot", encryptedStrings);
+            File.WriteAllLines(fullName + "_Лаб25_ " + groupName  + ".prot", encryptedStrings);
 
             MessageBox.Show("Протокол выгружен в папку с программой");
         }
@@ -74,7 +85,6 @@ namespace Virt_lab_25
                         {
                             string line = sr.ReadLine();
                             list.Add(line);
-                            Console.WriteLine(list[list.Count-1]);
                         }
                         
                         var arrTheoria = list.ToArray();
@@ -82,6 +92,8 @@ namespace Virt_lab_25
                         this.fullnameDecrypted = AesOperation.DecryptString(key, arrTheoria[0]);
                         this.groupNameDecrypted = AesOperation.DecryptString(key, arrTheoria[1]);
                         this.countErrorsDecrypted = AesOperation.DecryptString(key, arrTheoria[2]);
+                        this.workNameDecrypted = AesOperation.DecryptString(key, arrTheoria[3]);
+                        this.currentDateDecrypted = AesOperation.DecryptString(key, arrTheoria[4]);
                         
                         MessageBox.Show("Протокол загружен");
                     } else
@@ -91,23 +103,24 @@ namespace Virt_lab_25
                     }
                     
                     sr.Close();
+                    
+                    if (Convert.ToInt32(this.countErrorsDecrypted) == 0)
+                    {
+                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" + this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
+                    }
+                    else
+                    {
+                        label1.Text = "Время выполнения работы: " + this.currentDateDecrypted + "\n" + this.workNameDecrypted + "\nФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
+                    }
                 }
                 catch (SecurityException ex)
                 {
-                    MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                                    $"Details:\n\n{ex.StackTrace}");
+                    MessageBox.Show("Чет не то");
                 }
             }
             //var decryptedString = AesOperation.DecryptString(key, File.ReadAllText("protocol.prot"));
 
-            if (Convert.ToInt32(this.countErrorsDecrypted) == 0)
-            {
-                label1.Text = "ФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена успешно." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
-            }
-            else
-            {
-                label1.Text = "ФИО:  " + this.fullnameDecrypted +"\nГруппа: " + this.groupNameDecrypted + "\nЛабораторная работа выполнена с ошибками." + "\nКоличество ошибок: " + this.countErrorsDecrypted;
-            }
+           
             
         }
     }
