@@ -59,9 +59,10 @@ namespace Virt_lab_25
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label1.Location = new System.Drawing.Point(34, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 98);
+            this.label1.Size = new System.Drawing.Size(738, 330);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
@@ -77,6 +78,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.label1);
             this.Controls.Add(this.importProtocol);
             this.Controls.Add(this.exportProtocol);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Protocol";
             this.Text = "Protocol";
             this.Load += new System.EventHandler(this.Protocol_Load);
