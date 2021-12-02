@@ -19,6 +19,7 @@ namespace Virt_lab_25
         public string groupName = "";
         private int countErrors = 0;
         public bool isChechResultsClicked = false;
+        public bool isWorkWasSuccess = false;
 
         //public double amountOfFluctations;
         public double solutionForProblemNumber;
@@ -53,6 +54,7 @@ namespace Virt_lab_25
 
         private void check_Results_Click(object sender, System.EventArgs e)
         {
+            int countErrorRightNow = 0;
             isChechResultsClicked = true; // Переменная отвечающая за то, были результаты проверены или нет.
             Register reg = new Register();
             // проверка значений в таблице, сначала проверяю 6 измерений или нет, затем что значения T не равны нулю(введены), затем что g == 9.8, если работает то должно выдаваться "всё ок", иначе соответсвующие сообщения
@@ -79,6 +81,7 @@ namespace Virt_lab_25
                             {
                                 //showTextBox("Плохо преобразовали", "Сообщение");
                                 countErrors++;
+                                countErrorRightNow++;
                             }
                         }
                         else if (Convert.ToDouble(dataGridView1.Rows[row].Cells[1].Value) == 0.46)
@@ -91,6 +94,7 @@ namespace Virt_lab_25
                             {
                                 //showTextBox("Плохо преобразовали", "Сообщение");
                                 countErrors++;
+                                countErrorRightNow++;
                             }
                         }
                         else if (Convert.ToDouble(dataGridView1.Rows[row].Cells[1].Value) == 0.48)
@@ -102,6 +106,7 @@ namespace Virt_lab_25
                             else
                             {
                                 //showTextBox("Плохо преобразовали", "Сообщение");
+                                countErrorRightNow++;
                                 countErrors++;
                             }
                         }
@@ -114,6 +119,7 @@ namespace Virt_lab_25
                             else
                             {
                                 //showTextBox("Плохо преобразовали", "Сообщение");
+                                countErrorRightNow++;
                                 countErrors++;
                             }
                         }
@@ -121,15 +127,20 @@ namespace Virt_lab_25
 
                 }
                 // showTextBox("OK", "Сообщение");
-                if (countErrors==0)
+                if (countErrorRightNow == 0)
                 {
-                    showTextBox("Поздравляем", "Ошибок нет!");
+                    showTextBox("Поздравляем!", "Ошибок нет!");
+                    isWorkWasSuccess = true;
+                }
+                else
+                {
+                    showTextBox("Сообщение", "Работа проведена с ошибками!");
                 }
 
             }
             else
             {
-                showTextBox("ERROR", "КОЛ-ВА ИЗМЕРЕНИЙ НЕ СООТВЕТСВУЮТ ДРУГ ДРУГУ");
+                showTextBox("Ошибка", "КОЛ-ВА ИЗМЕРЕНИЙ НЕ СООТВЕТСВУЮТ ДРУГ ДРУГУ");
                 countErrors++;
             }
         }
