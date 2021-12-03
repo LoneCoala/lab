@@ -160,6 +160,10 @@
     <None Include="Resources\T.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\тест.png" />
+    <None Include="Resources\стрелка.png" />
+    <None Include="Resources\стрелка 32.png" />
+    <None Include="Resources\ruler-50-cm-measuring-tool-260nw-1243442011.jpg" />
     <Content Include="Resources\vipoln.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -347,11 +347,11 @@ namespace Virt_lab_25
         {
             if (numericUpDown1.Value > numericValue)
             {
-                pictureBox6.Top = pictureBox6.Top + 5;
+                pictureBox6.Top = pictureBox6.Top + 20;
             }
             else
             {
-                pictureBox6.Top = pictureBox6.Top - 5;
+                pictureBox6.Top = pictureBox6.Top - 20;
             }
             numericValue = numericUpDown1.Value;
             //label2.Text = numericUpDown1.Value.ToString();
@@ -394,6 +394,43 @@ namespace Virt_lab_25
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            metodichka.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            taskList.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (isChechResultsClicked == true)
+            {
+                minimumLenght = Convert.ToInt32(numericUpDown1.Minimum);
+                maximumLenght = Convert.ToInt32(numericUpDown1.Maximum);
+                
+                Protocol protocol = new Protocol();
+                protocol.fullName = name;
+                protocol.groupName = groupName;
+                protocol.countErrors = countErrors;
+                protocol.isWorkWasSuccess = this.isWorkWasSuccess;
+                protocol.minimumLenght = minimumLenght;
+                protocol.maximumLenght = maximumLenght;
+                protocol.Show();
+            }
+            else
+            {
+                showTextBox("Проверьте результаты", "Пожалуйста");
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
 
         }

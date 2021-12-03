@@ -144,8 +144,13 @@ namespace Virt_lab_25
            
             
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
     public class AesOperation
     {
         public static string EncryptString(string key, string plainText)

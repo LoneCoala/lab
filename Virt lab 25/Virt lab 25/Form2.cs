@@ -21,7 +21,7 @@ namespace Virt_lab_25
         private void Form2_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile("vipoln.png");
-           // pictureBox1.Width = Image.FromFile("vipoln.png").Width;
+           //pictureBox1.Width = Image.FromFile("vipoln.png").Width;
             pictureBox1.Parent = panel1;
             panel1.AutoScroll = true;
         }

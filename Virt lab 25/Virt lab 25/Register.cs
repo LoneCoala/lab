@@ -41,7 +41,7 @@ namespace Virt_lab_25
                         form.numericUpDown1.Value = 40;
                         form.numericUpDown1.Minimum = 40;
                         form.numericUpDown1.Maximum = 50;
-                        form.pictureBox6.Top += 30;
+                        form.pictureBox6.Top += 80;
                     }
                     form.Show();
                 }

@@ -41,7 +41,7 @@ namespace Virt_lab_25
             // 
             // enterRegister
             // 
-            this.enterRegister.Location = new System.Drawing.Point(27, 165);
+            this.enterRegister.Location = new System.Drawing.Point(40, 154);
             this.enterRegister.Name = "enterRegister";
             this.enterRegister.Size = new System.Drawing.Size(75, 23);
             this.enterRegister.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace Virt_lab_25
             // 
             // closeRegister
             // 
-            this.closeRegister.Location = new System.Drawing.Point(131, 165);
+            this.closeRegister.Location = new System.Drawing.Point(157, 154);
             this.closeRegister.Name = "closeRegister";
             this.closeRegister.Size = new System.Drawing.Size(75, 23);
             this.closeRegister.TabIndex = 1;
@@ -96,7 +96,7 @@ namespace Virt_lab_25
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 98);
+            this.radioButton1.Location = new System.Drawing.Point(46, 98);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(69, 17);
             this.radioButton1.TabIndex = 8;
@@ -108,7 +108,7 @@ namespace Virt_lab_25
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(106, 98);
+            this.radioButton2.Location = new System.Drawing.Point(137, 98);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(69, 17);
             this.radioButton2.TabIndex = 9;
@@ -121,7 +121,7 @@ namespace Virt_lab_25
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(247, 207);
+            this.ClientSize = new System.Drawing.Size(265, 191);
             this.ControlBox = false;
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -135,7 +135,7 @@ namespace Virt_lab_25
             this.MinimumSize = new System.Drawing.Size(263, 223);
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Лабораторная работа №25";
+            this.Text = "Определение ускорения свободного падения";
             this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
