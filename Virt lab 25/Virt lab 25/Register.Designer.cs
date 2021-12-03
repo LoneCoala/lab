@@ -29,6 +29,7 @@ namespace Virt_lab_25
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.enterRegister = new System.Windows.Forms.Button();
             this.closeRegister = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -63,7 +64,7 @@ namespace Virt_lab_25
             // 
             this.textBoxName.Location = new System.Drawing.Point(106, 27);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxName.Size = new System.Drawing.Size(100, 22);
             this.textBoxName.TabIndex = 2;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
@@ -71,7 +72,7 @@ namespace Virt_lab_25
             // 
             this.textBoxGroup.Location = new System.Drawing.Point(106, 53);
             this.textBoxGroup.Name = "textBoxGroup";
-            this.textBoxGroup.Size = new System.Drawing.Size(100, 20);
+            this.textBoxGroup.Size = new System.Drawing.Size(100, 22);
             this.textBoxGroup.TabIndex = 3;
             // 
             // name
@@ -79,7 +80,7 @@ namespace Virt_lab_25
             this.name.AutoSize = true;
             this.name.Location = new System.Drawing.Point(13, 34);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(87, 13);
+            this.name.Size = new System.Drawing.Size(111, 17);
             this.name.TabIndex = 4;
             this.name.Text = "Имя и фамилия";
             // 
@@ -88,7 +89,7 @@ namespace Virt_lab_25
             this.group.AutoSize = true;
             this.group.Location = new System.Drawing.Point(58, 56);
             this.group.Name = "group";
-            this.group.Size = new System.Drawing.Size(42, 13);
+            this.group.Size = new System.Drawing.Size(55, 17);
             this.group.TabIndex = 5;
             this.group.Text = "Группа";
             // 
@@ -98,7 +99,7 @@ namespace Virt_lab_25
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(12, 98);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(69, 17);
+            this.radioButton1.Size = new System.Drawing.Size(86, 21);
             this.radioButton1.TabIndex = 8;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "30-40 см";
@@ -110,7 +111,7 @@ namespace Virt_lab_25
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(106, 98);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(69, 17);
+            this.radioButton2.Size = new System.Drawing.Size(86, 21);
             this.radioButton2.TabIndex = 9;
             this.radioButton2.Text = "40-50 см";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -131,6 +132,7 @@ namespace Virt_lab_25
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.closeRegister);
             this.Controls.Add(this.enterRegister);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.MinimumSize = new System.Drawing.Size(263, 223);
             this.Name = "Register";
