@@ -158,3 +158,17 @@ C:\Users\tjuri\source\repos\labka\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.
 C:\Users\tjuri\source\repos\labka\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.exe
 C:\Users\tjuri\source\repos\labka\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.pdb
 C:\Users\arsen\source\repos\lab25\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Protocol.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.exe.config
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.exe
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\bin\Debug\Virt lab 25.pdb
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.AssemblyReference.cache
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Form1.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Form2.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Form3.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Properties.Resources.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Protocol.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt_lab_25.Register.resources
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.GenerateResource.cache
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.csproj.CoreCompileInputs.cache
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.exe
+C:\Users\79509\Desktop\labashizika\Virt lab 25\Virt lab 25\obj\Debug\Virt lab 25.pdb
