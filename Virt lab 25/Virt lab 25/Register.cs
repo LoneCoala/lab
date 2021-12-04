@@ -99,5 +99,11 @@ namespace Virt_lab_25
         {
 
         }
+       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Protocol protocol = new Protocol();
+            protocol.Show();
+        }
     }
 }

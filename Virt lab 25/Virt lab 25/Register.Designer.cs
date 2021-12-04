@@ -35,11 +35,12 @@ namespace Virt_lab_25
             this.textBoxGroup = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.group = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // enterRegister
             // 
-            this.enterRegister.Location = new System.Drawing.Point(40, 154);
+            this.enterRegister.Location = new System.Drawing.Point(33, 120);
             this.enterRegister.Name = "enterRegister";
             this.enterRegister.Size = new System.Drawing.Size(75, 23);
             this.enterRegister.TabIndex = 0;
@@ -49,7 +50,7 @@ namespace Virt_lab_25
             // 
             // closeRegister
             // 
-            this.closeRegister.Location = new System.Drawing.Point(157, 154);
+            this.closeRegister.Location = new System.Drawing.Point(144, 120);
             this.closeRegister.Name = "closeRegister";
             this.closeRegister.Size = new System.Drawing.Size(75, 23);
             this.closeRegister.TabIndex = 1;
@@ -90,13 +91,24 @@ namespace Virt_lab_25
             this.group.TabIndex = 5;
             this.group.Text = "Группа";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(237, 44);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Проверка протокола";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Register
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(265, 205);
+            this.ClientSize = new System.Drawing.Size(269, 205);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.group);
             this.Controls.Add(this.name);
             this.Controls.Add(this.textBoxGroup);
@@ -122,5 +134,6 @@ namespace Virt_lab_25
         private System.Windows.Forms.TextBox textBoxGroup;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label group;
+        private System.Windows.Forms.Button button1;
     }
 }
