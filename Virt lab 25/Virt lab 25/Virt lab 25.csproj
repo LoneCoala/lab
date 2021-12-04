@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Protocol.Designer.cs">
+      <DependentUpon>Protocol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Protocol.resx">
+      <DependentUpon>Protocol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +152,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\тест.png" />
+    <None Include="Resources\стрелка.png" />
+    <None Include="Resources\стрелка 32.png" />
+    <None Include="Resources\ruler-50-cm-measuring-tool-260nw-1243442011.jpg" />
+    <Content Include="Resources\vipoln.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

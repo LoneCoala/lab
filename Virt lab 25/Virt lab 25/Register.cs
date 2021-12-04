@@ -16,28 +16,40 @@ namespace Virt_lab_25
         {
             InitializeComponent();
         }
+        //public int amountOfFluctationsInput;
 
         private void enterRegister_Click(object sender, EventArgs e)
         {
-           if (checkTextBox())
+           if (checkTextBox() && checkTextGroup())
             {
-                string name = textBoxName.Text + " " + textBoxGroup.Text;
-                this.Hide();
-                Form1 form = new Form1();
-                if (radioButton1.Checked == true)
-                {
-                    form.numericUpDown1.Value = 30;
-                    form.numericUpDown1.Minimum = 30;
-                    form.numericUpDown1.Maximum = 40;
+                    string name = textBoxName.Text;
+                    string group = textBoxGroup.Text;
+                    this.Hide();
+                    Form1 form = new Form1();
+
+                    form.name = name;
+                    form.groupName = group;
+                    //form.amountOfFluctations = amountOfFluctationsInput;
+                    if (radioButton1.Checked == true)
+                    {
+                        form.numericUpDown1.Value = 30;
+                        form.numericUpDown1.Minimum = 30;
+                        form.numericUpDown1.Maximum = 40;
+                    }
+                    else
+                    {
+                        form.numericUpDown1.Value = 40;
+                        form.numericUpDown1.Minimum = 40;
+                        form.numericUpDown1.Maximum = 50;
+                        form.pictureBox6.Top += 80;
+                    }
+                    form.Show();
                 }
                 else
                 {
-                    form.numericUpDown1.Value = 40;
-                    form.numericUpDown1.Minimum = 40;
-                    form.numericUpDown1.Maximum = 50;
+                    MessageBox.Show("Не заполнены поля");
                 }
-                form.Show();
-            }
+            
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
@@ -64,6 +76,23 @@ namespace Virt_lab_25
             return true;
         }
 
+        private bool checkTextGroup()
+        {
+            if ((textBoxGroup.Text.Trim() == string.Empty))
+            {
+                MessageBox.Show("Не заполнены поля");
+                return false;
+            }
+            else if ((textBoxGroup.Text.Trim() == string.Empty))
+            {
+                MessageBox.Show("Не заполнены поля");
+                return false;
+            }
+            return true;
+        }
+
+
+
         private void Register_Load(object sender, EventArgs e)
         {
 
@@ -75,6 +104,11 @@ namespace Virt_lab_25
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
