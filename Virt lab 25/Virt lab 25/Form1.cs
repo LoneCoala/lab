@@ -246,6 +246,9 @@ namespace Virt_lab_25
                     dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
                     dataGridView1.Rows[number].Cells[4].Value = 0;
                     dataGridView1.Rows[number].Cells[5].Value = 0;
+
+                    dataGridView1.Columns[4].DefaultCellStyle.BackColor = Color.Silver;
+                    dataGridView1.Columns[5].DefaultCellStyle.BackColor = Color.Silver;
                 }
                 Brush brush = Brushes.Gray;
                 pen = new Pen(Color.Black, 2);
