@@ -92,7 +92,7 @@ namespace Virt_lab_25
             {
                 File.WriteAllLines(saveFileDialog1.FileName, encryptedStrings);
             }
-            MessageBox.Show("Протокол выгружен в папку с программой");
+            MessageBox.Show("Протокол выгружен");
         }
 
         private void importProtocol_Click(object sender, EventArgs e)
