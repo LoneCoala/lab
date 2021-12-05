@@ -18,9 +18,9 @@ namespace Virt_lab_25
         private string groupNameDecrypted = "";
         private string countErrorsDecrypted = "";
         private string workNameDecrypted = "";
-        private string currentDateDecrypted = "";
-        private string minimumLenghtDecrypted = "";
-        private string maximumLenghtDecrypted = "";
+        private string currentDateDecrypted = " ";
+        private string minimumLenghtDecrypted = " ";
+        private string maximumLenghtDecrypted = " ";
         
         public ProtocolImport()
         {
