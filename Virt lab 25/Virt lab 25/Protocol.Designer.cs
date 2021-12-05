@@ -35,6 +35,7 @@ namespace Virt_lab_25
             this.importProtocol = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // exportProtocol
@@ -59,10 +60,10 @@ namespace Virt_lab_25
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(34, 42);
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label1.Location = new System.Drawing.Point(40, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(738, 330);
+            this.label1.Size = new System.Drawing.Size(732, 330);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -81,11 +82,12 @@ namespace Virt_lab_25
             this.Controls.Add(this.exportProtocol);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Protocol";
-            this.Text = "Protocol";
+            this.Text = "Пртокол";
             this.Load += new System.EventHandler(this.Protocol_Load);
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
 

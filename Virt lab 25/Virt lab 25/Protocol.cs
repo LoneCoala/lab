@@ -41,7 +41,8 @@ namespace Virt_lab_25
         {
             InitializeComponent();
             MaximizeBox = false;
-
+            saveFileDialog1.Filter = "Prot files(*.prot)|*.prot|All files(*.*)|*.*";
+            saveFileDialog1.AddExtension = true;
         }
 
         private void Protocol_Load(object sender, EventArgs e)
@@ -85,8 +86,12 @@ namespace Virt_lab_25
             this.encryptedString = encryptedStrings;
 
             //System.IO.File.WriteAllText("protocol.prot", encryptedStrings);
-            File.WriteAllLines(fullName + "_Лаб25_ " + groupName  + ".prot", encryptedStrings);
-
+           // File.WriteAllLines(fullName + "_Лаб25_ " + groupName  + ".prot", encryptedStrings);
+            
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialog1.FileName, encryptedStrings);
+            }
             MessageBox.Show("Протокол выгружен в папку с программой");
         }
 
