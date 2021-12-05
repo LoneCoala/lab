@@ -91,6 +91,12 @@
     <Compile Include="Protocol.Designer.cs">
       <DependentUpon>Protocol.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProtocolImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolImport.Designer.cs">
+      <DependentUpon>ProtocolImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
