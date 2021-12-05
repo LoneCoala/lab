@@ -462,6 +462,7 @@ namespace Virt_lab_25
                 numericUpDown1.Enabled = true;
                 radioButton1.Enabled = false;
                 radioButton2.Enabled = false;
+
             }
             else
             {
@@ -480,6 +481,7 @@ namespace Virt_lab_25
                 numericUpDown1.Enabled = true;
                 radioButton2.Enabled = false;
                 radioButton1.Enabled = false;
+                pictureBox6.Top += 82;
             }
             else
             {
