@@ -21,7 +21,7 @@ namespace Virt_lab_25
         
         public string fullName = "";
         public string groupName = "";
-        public string workName = "Лаб. Работа №25";
+        public string workName = "Лабораторная работа 'Определение ускорения свободного падения'";
         
         public string fullnameDecrypted = "";
         public string groupNameDecrypted = "";
