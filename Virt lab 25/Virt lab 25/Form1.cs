@@ -182,109 +182,115 @@ namespace Virt_lab_25
         double time = 0;
         private void button2_Click_1(object sender, EventArgs e)
         {
-
-            if (quantity <= 5) // проверка на количество измерений 
+            if (radioButton1.Checked == false && radioButton2.Checked == false) // проверка на выбор длины
             {
-                int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
-                Point Origin = new Point(pictureBox1.Width / 2, 0);
-                float Length = length * 3;
-                Point Bob = new Point(Origin.X, (int)Length);
-                Graphics G = pictureBox1.CreateGraphics();
-                Pen pen;
-                float Angle = (float)Math.PI / 13;
-                float AnglularVelocity = -0.01f;
-                float AngularAcceleration = 0.0f;
-                timer1.Interval = 10;
-                startButtonClicked = true;
-                timer1.Enabled = false;
-                timer1.Start();
-                this.Invalidate();
-                double g, l, T, t, n;
-                Register reg = new Register();
-                //n = reg.amountOfFluctationsInput;
-                n = 10;
-                //n = (int)amountOfFluctations;
-                l = Convert.ToDouble(numericUpDown1.Value) / 100;
-                bool check = false;
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    if (l == Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value))
-                    {
-                        showTextBox("Вы уже провели измерение с данной длиной", "Сообщение");
-                        check = true;
-                    }
-                }
-                if (check == false)
-                {
-                    quantity++;
-                    int number = dataGridView1.Rows.Add();
-                    dataGridView1.Rows[number].Cells[1].Value = l;
-                    g = 9.8;
-                    g = Math.Round(g, 2);
-                    T = 2 * Math.PI * Math.Sqrt(l / g);
-                    T = Math.Round(T, 2);
-                    t = T * n;
-                    t = Math.Round(t, 2);
-                    if (l == 0.32)
-                    {
-                        solutionForProblemNumber = T;
-                    }
-                    time = t;
-                    Atime = Atime + time;
-
-                    // textBox1.Text = Convert.ToString(t); ?
-                    dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
-                    dataGridView1.Rows[number].Cells[0].ReadOnly = true; // Блокировка ввода номера опыта
-
-                    //dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
-                    dataGridView1.Rows[number].Cells[1].ReadOnly = true; // Блокировка ввода длины нити 
-
-                    dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
-                    dataGridView1.Rows[number].Cells[2].ReadOnly = true; // Блокировка ввода времени t
-
-                    dataGridView1.Rows[number].Cells[3].Value = n; // кол-во колебаний, всегда 10
-                    dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
-                    dataGridView1.Rows[number].Cells[4].Value = 0;
-                    dataGridView1.Rows[number].Cells[5].Value = 0;
-                }
-                Brush brush = Brushes.Gray;
-                pen = new Pen(Color.Black, 2);
-                do
-                {
-
-                    Bob.X = (int)(Length * Math.Sin(Angle) + Origin.X);
-                    Bob.Y = (int)(Length * Math.Cos(Angle) + Origin.Y);
-
-                    Angle += AnglularVelocity;
-                    AnglularVelocity += AngularAcceleration;
-
-                    AnglularVelocity *= (float)0.99;
-
-                    //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
-                    G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
-                    Application.DoEvents();
-
-
-                    Thread.Sleep(14);
-                    pictureBox1.Refresh();
-                    AngularAcceleration = (float)(-0.01 * Math.Sin(Angle));
-                    G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
-                    // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
-                    //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
-
-
-                } while (timer1.Enabled);
-
-                AngularAcceleration = 0;
-                Angle = 0;
-                AnglularVelocity = 0;
-
+                showTextBox("Выберите диапазон длины нити, для того чтобы начать измерения", "Сообщение");
             }
             else
             {
-                showTextBox("Вы провели максимальное число измерений", "Сообщение");
+                if (quantity <= 5) // проверка на количество измерений 
+                {
+                    int length = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
+                    Point Origin = new Point(pictureBox1.Width / 2, 0);
+                    float Length = length * 3;
+                    Point Bob = new Point(Origin.X, (int)Length);
+                    Graphics G = pictureBox1.CreateGraphics();
+                    Pen pen;
+                    float Angle = (float)Math.PI / 13;
+                    float AnglularVelocity = -0.01f;
+                    float AngularAcceleration = 0.0f;
+                    timer1.Interval = 10;
+                    startButtonClicked = true;
+                    timer1.Enabled = false;
+                    timer1.Start();
+                    this.Invalidate();
+                    double g, l, T, t, n;
+                    Register reg = new Register();
+                    //n = reg.amountOfFluctationsInput;
+                    n = 10;
+                    //n = (int)amountOfFluctations;
+                    l = Convert.ToDouble(numericUpDown1.Value) / 100;
+                    bool check = false;
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        if (l == Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value))
+                        {
+                            showTextBox("Вы уже провели измерение с данной длиной", "Сообщение");
+                            check = true;
+                        }
+                    }
+                    if (check == false)
+                    {
+                        quantity++;
+                        int number = dataGridView1.Rows.Add();
+                        dataGridView1.Rows[number].Cells[1].Value = l;
+                        g = 9.8;
+                        g = Math.Round(g, 2);
+                        T = 2 * Math.PI * Math.Sqrt(l / g);
+                        T = Math.Round(T, 2);
+                        t = T * n;
+                        t = Math.Round(t, 2);
+                        if (l == 0.32)
+                        {
+                            solutionForProblemNumber = T;
+                        }
+                        time = t;
+                        Atime = Atime + time;
+
+                        // textBox1.Text = Convert.ToString(t); ?
+                        dataGridView1.Rows[number].Cells[0].Value = number + 1;  // вписываем номер № действия
+                        dataGridView1.Rows[number].Cells[0].ReadOnly = true; // Блокировка ввода номера опыта
+
+                        //dataGridView1.Rows[number].Cells[1].Value = l; // вписываем длину нити
+                        dataGridView1.Rows[number].Cells[1].ReadOnly = true; // Блокировка ввода длины нити 
+
+                        dataGridView1.Rows[number].Cells[2].Value = time; // ввод времени t
+                        dataGridView1.Rows[number].Cells[2].ReadOnly = true; // Блокировка ввода времени t
+
+                        dataGridView1.Rows[number].Cells[3].Value = n; // кол-во колебаний, всегда 10
+                        dataGridView1.Rows[number].Cells[3].ReadOnly = true; // Блокировка ввода количества колебаний
+                        dataGridView1.Rows[number].Cells[4].Value = 0;
+                        dataGridView1.Rows[number].Cells[5].Value = 0;
+                    }
+                    Brush brush = Brushes.Gray;
+                    pen = new Pen(Color.Black, 2);
+                    do
+                    {
+
+                        Bob.X = (int)(Length * Math.Sin(Angle) + Origin.X);
+                        Bob.Y = (int)(Length * Math.Cos(Angle) + Origin.Y);
+
+                        Angle += AnglularVelocity;
+                        AnglularVelocity += AngularAcceleration;
+
+                        AnglularVelocity *= (float)0.99;
+
+                        //  G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                        G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                        // G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+                        G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
+                        Application.DoEvents();
+
+
+                        Thread.Sleep(14);
+                        pictureBox1.Refresh();
+                        AngularAcceleration = (float)(-0.01 * Math.Sin(Angle));
+                        G.FillEllipse(brush, Bob.X - 8, Bob.Y - 2, 17, 17);
+                        // G.DrawLine(pen, Origin.X, Origin.Y, Bob.X, Bob.Y);
+                        //      G.DrawEllipse(pen, Bob.X - 17, Bob.Y, 40, 40);
+
+
+                    } while (timer1.Enabled);
+
+                    AngularAcceleration = 0;
+                    Angle = 0;
+                    AnglularVelocity = 0;
+
+                }
+                else
+                {
+                    showTextBox("Вы провели максимальное число измерений", "Сообщение");
+                }
             }
         }
 
@@ -433,6 +439,52 @@ namespace Virt_lab_25
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены в своём выборе?", "Сообщение", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                numericUpDown1.Value = 30;
+                numericUpDown1.Minimum = 30;
+                numericUpDown1.Maximum = 40;
+                numericUpDown1.Enabled = true;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+            }
+            else
+            {
+                radioButton1.Checked = false;
+            }
+        }
+
+        private void radioButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены в своём выборе?", "Сообщение", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                numericUpDown1.Value = 40;
+                numericUpDown1.Minimum = 40;
+                numericUpDown1.Maximum = 50;
+                numericUpDown1.Enabled = true;
+                radioButton2.Enabled = false;
+                radioButton1.Enabled = false;
+            }
+            else
+            {
+                radioButton2.Checked = false;
+            }
         }
     }
 }
