@@ -21,7 +21,7 @@ namespace Virt_lab_25
         
         public string fullName = "";
         public string groupName = "";
-        public string workName = "Лаб. Работа №25";
+        public string workName = "Лабораторная работа 'Определение ускорения свободного падения'";
         
         public string fullnameDecrypted = "";
         public string groupNameDecrypted = "";
@@ -41,7 +41,8 @@ namespace Virt_lab_25
         {
             InitializeComponent();
             MaximizeBox = false;
-
+            saveFileDialog1.Filter = "Prot files(*.prot)|*.prot|All files(*.*)|*.*";
+            saveFileDialog1.AddExtension = true;
         }
 
         private void Protocol_Load(object sender, EventArgs e)
@@ -85,9 +86,13 @@ namespace Virt_lab_25
             this.encryptedString = encryptedStrings;
 
             //System.IO.File.WriteAllText("protocol.prot", encryptedStrings);
-            File.WriteAllLines(fullName + "_Лаб25_ " + groupName  + ".prot", encryptedStrings);
-
-            MessageBox.Show("Протокол выгружен в папку с программой");
+           // File.WriteAllLines(fullName + "_Лаб25_ " + groupName  + ".prot", encryptedStrings);
+            
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialog1.FileName, encryptedStrings);
+            }
+            MessageBox.Show("Протокол выгружен");
         }
 
         private void importProtocol_Click(object sender, EventArgs e)
