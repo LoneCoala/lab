@@ -164,6 +164,13 @@
     <None Include="Resources\стрелка.png" />
     <None Include="Resources\стрелка 32.png" />
     <None Include="Resources\ruler-50-cm-measuring-tool-260nw-1243442011.jpg" />
+    <None Include="bin\Debug\vipoln.png" />
+    <None Include="bin\Debug\Metod6.PNG" />
+    <None Include="bin\Debug\Metod5.PNG" />
+    <None Include="bin\Debug\Metod4.PNG" />
+    <None Include="bin\Debug\Metod3.PNG" />
+    <None Include="bin\Debug\Metod2.PNG" />
+    <None Include="bin\Debug\Metod1.PNG" />
     <Content Include="Resources\vipoln.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

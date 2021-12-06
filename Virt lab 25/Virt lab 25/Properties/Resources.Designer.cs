@@ -73,6 +73,66 @@ namespace Virt_lab_25.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Metod1 {
+            get {
+                object obj = ResourceManager.GetObject("Metod1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Metod2 {
+            get {
+                object obj = ResourceManager.GetObject("Metod2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Metod3 {
+            get {
+                object obj = ResourceManager.GetObject("Metod3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Metod4 {
+            get {
+                object obj = ResourceManager.GetObject("Metod4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Metod5 {
+            get {
+                object obj = ResourceManager.GetObject("Metod5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Metod6 {
+            get {
+                object obj = ResourceManager.GetObject("Metod6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ruler_50_cm_measuring_tool_260nw_1243442011 {
             get {
                 object obj = ResourceManager.GetObject("ruler-50-cm-measuring-tool-260nw-1243442011", resourceCulture);
@@ -96,6 +156,16 @@ namespace Virt_lab_25.Properties {
         internal static System.Drawing.Bitmap T {
             get {
                 object obj = ResourceManager.GetObject("T", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vipoln {
+            get {
+                object obj = ResourceManager.GetObject("vipoln", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
