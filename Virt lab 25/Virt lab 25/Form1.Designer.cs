@@ -409,7 +409,7 @@ namespace Virt_lab_25
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(500, 353);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(69, 17);
             this.radioButton1.TabIndex = 30;
@@ -433,7 +433,7 @@ namespace Virt_lab_25
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(500, 379);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(69, 17);
             this.radioButton2.TabIndex = 33;
@@ -446,7 +446,7 @@ namespace Virt_lab_25
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = global::Virt_lab_25.Properties.Resources.стрелка_32;
-            this.pictureBox7.Location = new System.Drawing.Point(399, 74);
+            this.pictureBox7.Location = new System.Drawing.Point(402, 74);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(50, 21);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
