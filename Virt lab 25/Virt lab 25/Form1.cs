@@ -306,7 +306,9 @@ namespace Virt_lab_25
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
         }
         static bool checkNumberText(object number)
         {
@@ -357,11 +359,11 @@ namespace Virt_lab_25
         {
             if (numericUpDown1.Value > numericValue)
             {
-                pictureBox7.Top = pictureBox7.Top + 20;
+                pictureBox8.Top = pictureBox8.Top + 53;
             }
             else
             {
-                pictureBox7.Top = pictureBox7.Top - 20;
+                pictureBox8.Top = pictureBox8.Top - 53;
             }
             numericValue = numericUpDown1.Value;
             //label2.Text = numericUpDown1.Value.ToString();
@@ -467,8 +469,9 @@ namespace Virt_lab_25
                 radioButton1.Enabled = false;
                 radioButton2.Enabled = false;
                 pictureBox5.Hide();
-
-
+                pictureBox7.Hide();
+                pictureBox8.Show();
+                pictureBox6.Show();
             }
             else
             {
@@ -487,9 +490,11 @@ namespace Virt_lab_25
                 numericUpDown1.Enabled = true;
                 radioButton2.Enabled = false;
                 radioButton1.Enabled = false;
-                pictureBox6.Hide();
-                pictureBox7.Top += 82;
-
+                pictureBox7.Show();
+                pictureBox5.Hide();
+                pictureBox8.Show();
+                pictureBox5.Hide();
+                pictureBox8.Top = pictureBox8.Top - 50;
             }
             else
             {
@@ -500,6 +505,11 @@ namespace Virt_lab_25
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
 
         }
     }
