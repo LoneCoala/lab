@@ -169,7 +169,11 @@
     <None Include="Resources\T.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\40-50 1.png" />
+    <None Include="Resources\30-40 1.png" />
+    <None Include="Resources\30-50.png" />
     <Content Include="Resources\vipoln1.png" />
+    <None Include="Resources\тест 2.png" />
     <None Include="Resources\тест.png" />
     <None Include="Resources\стрелка.png" />
     <None Include="Resources\стрелка 32.png" />

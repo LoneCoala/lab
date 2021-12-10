@@ -121,14 +121,23 @@
   <data name="стрелка" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\стрелка.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="30-40 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\30-40 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Metod5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Metod5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Metod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Metod1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="красный треугольник без фона2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\красный треугольник без фона2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="тест 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\тест 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="красный треугольник без фона1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\красный треугольник без фона1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,17 +169,19 @@
   <data name="Metod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Metod3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
+  <data name="vipoln" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vipoln1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ruler-50-cm-measuring-tool-260nw-1243442011" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ruler-50-cm-measuring-tool-260nw-1243442011.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="40-50 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\40-50 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="стрелка 32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\стрелка 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Metod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Metod1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vipoln" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vipoln1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="30-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\30-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

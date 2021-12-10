@@ -58,23 +58,27 @@ namespace Virt_lab_25
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timer4)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -85,10 +89,9 @@ namespace Virt_lab_25
             // 
             // closemain
             // 
-            this.closemain.Location = new System.Drawing.Point(1047, 455);
-            this.closemain.Margin = new System.Windows.Forms.Padding(4);
+            this.closemain.Location = new System.Drawing.Point(785, 370);
             this.closemain.Name = "closemain";
-            this.closemain.Size = new System.Drawing.Size(131, 53);
+            this.closemain.Size = new System.Drawing.Size(98, 43);
             this.closemain.TabIndex = 1;
             this.closemain.Text = "Выход";
             this.closemain.UseVisualStyleBackColor = true;
@@ -96,10 +99,9 @@ namespace Virt_lab_25
             // 
             // Button2
             // 
-            this.Button2.Location = new System.Drawing.Point(909, 455);
-            this.Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.Button2.Location = new System.Drawing.Point(682, 370);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(129, 53);
+            this.Button2.Size = new System.Drawing.Size(97, 43);
             this.Button2.TabIndex = 5;
             this.Button2.Text = "Измерить";
             this.Button2.UseVisualStyleBackColor = true;
@@ -110,11 +112,10 @@ namespace Virt_lab_25
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(857, 440);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Location = new System.Drawing.Point(643, 358);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(39, 16);
+            this.textBox3.Size = new System.Drawing.Size(29, 13);
             this.textBox3.TabIndex = 9;
             this.textBox3.Text = "см";
             // 
@@ -126,8 +127,7 @@ namespace Virt_lab_25
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(771, 437);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown1.Location = new System.Drawing.Point(578, 355);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             50,
             0,
@@ -140,7 +140,7 @@ namespace Virt_lab_25
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(79, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
             this.numericUpDown1.TabIndex = 14;
             this.numericUpDown1.Value = new decimal(new int[] {
             30,
@@ -177,8 +177,7 @@ namespace Virt_lab_25
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 71);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
@@ -191,7 +190,7 @@ namespace Virt_lab_25
             this.dataGridView1.RowHeadersWidth = 10;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Size = new System.Drawing.Size(416, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(312, 260);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -202,7 +201,7 @@ namespace Virt_lab_25
             this.nomer.HeaderText = "№";
             this.nomer.MinimumWidth = 6;
             this.nomer.Name = "nomer";
-            this.nomer.Width = 51;
+            this.nomer.Width = 43;
             // 
             // l
             // 
@@ -210,7 +209,7 @@ namespace Virt_lab_25
             this.l.HeaderText = "l,м";
             this.l.MinimumWidth = 6;
             this.l.Name = "l";
-            this.l.Width = 53;
+            this.l.Width = 45;
             // 
             // Column1
             // 
@@ -225,7 +224,7 @@ namespace Virt_lab_25
             this.n.HeaderText = "n";
             this.n.MinimumWidth = 6;
             this.n.Name = "n";
-            this.n.Width = 45;
+            this.n.Width = 38;
             // 
             // T
             // 
@@ -236,7 +235,7 @@ namespace Virt_lab_25
             this.T.HeaderText = "T,с";
             this.T.MinimumWidth = 6;
             this.T.Name = "T";
-            this.T.Width = 57;
+            this.T.Width = 48;
             // 
             // g
             // 
@@ -247,15 +246,14 @@ namespace Virt_lab_25
             this.g.HeaderText = "g,м*с^-2";
             this.g.MinimumWidth = 6;
             this.g.Name = "g";
-            this.g.Width = 90;
+            this.g.Width = 74;
             // 
             // check_Results
             // 
             this.check_Results.BackColor = System.Drawing.SystemColors.Window;
-            this.check_Results.Location = new System.Drawing.Point(909, 393);
-            this.check_Results.Margin = new System.Windows.Forms.Padding(4);
+            this.check_Results.Location = new System.Drawing.Point(682, 319);
             this.check_Results.Name = "check_Results";
-            this.check_Results.Size = new System.Drawing.Size(268, 55);
+            this.check_Results.Size = new System.Drawing.Size(201, 45);
             this.check_Results.TabIndex = 19;
             this.check_Results.Text = "Проверить результаты";
             this.check_Results.UseVisualStyleBackColor = false;
@@ -271,11 +269,10 @@ namespace Virt_lab_25
             this.stringlong.BackColor = System.Drawing.Color.White;
             this.stringlong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.stringlong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stringlong.Location = new System.Drawing.Point(771, 463);
-            this.stringlong.Margin = new System.Windows.Forms.Padding(4);
+            this.stringlong.Location = new System.Drawing.Point(578, 376);
             this.stringlong.Name = "stringlong";
             this.stringlong.ReadOnly = true;
-            this.stringlong.Size = new System.Drawing.Size(124, 16);
+            this.stringlong.Size = new System.Drawing.Size(93, 13);
             this.stringlong.TabIndex = 17;
             this.stringlong.Text = "Длина нити";
             // 
@@ -288,20 +285,18 @@ namespace Virt_lab_25
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(16, 400);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 325);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(251, 25);
+            this.label3.Size = new System.Drawing.Size(205, 20);
             this.label3.TabIndex = 25;
             this.label3.Text = "Формулы для расчета:";
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(304, 437);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(228, 355);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(373, 62);
+            this.label4.Size = new System.Drawing.Size(280, 50);
             this.label4.TabIndex = 27;
             this.label4.Text = "Пишите T с двумя знаками после запятой, а g с одним";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -316,114 +311,17 @@ namespace Virt_lab_25
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1193, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(895, 25);
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(195, 24);
-            this.toolStripButton2.Text = "Методические материалы";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(222, 24);
-            this.toolStripButton1.Text = "Порядок выполнения работы";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(81, 24);
-            this.toolStripButton3.Text = "Протокол";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Virt_lab_25.Properties.Resources.стрелка;
-            this.pictureBox6.Location = new System.Drawing.Point(532, 92);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(73, 23);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox6.TabIndex = 28;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Virt_lab_25.Properties.Resources.тест;
-            this.pictureBox5.Location = new System.Drawing.Point(440, 91);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(177, 298);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 26;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Virt_lab_25.Properties.Resources.T;
-            this.pictureBox4.Location = new System.Drawing.Point(21, 437);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox4.TabIndex = 24;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Virt_lab_25.Properties.Resources.g;
-            this.pictureBox3.Location = new System.Drawing.Point(163, 437);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Virt_lab_25.Properties.Resources.Screenshot_2;
-            this.pictureBox2.Location = new System.Drawing.Point(815, -2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(179, 97);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Location = new System.Drawing.Point(625, 91);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(559, 298);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(666, 434);
+            this.radioButton1.Location = new System.Drawing.Point(500, 353);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 21);
+            this.radioButton1.Size = new System.Drawing.Size(69, 17);
             this.radioButton1.TabIndex = 30;
             this.radioButton1.Text = "30-40 см";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -434,38 +332,157 @@ namespace Virt_lab_25
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(666, 411);
+            this.label1.Location = new System.Drawing.Point(500, 334);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 17);
+            this.label1.Size = new System.Drawing.Size(158, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "Выбор диапазона длины нити";
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(666, 466);
+            this.radioButton2.Location = new System.Drawing.Point(500, 379);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 21);
+            this.radioButton2.Size = new System.Drawing.Size(69, 17);
             this.radioButton2.TabIndex = 33;
             this.radioButton2.Text = "40-50 см";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Virt_lab_25.Properties.Resources.стрелка_32;
+            this.pictureBox8.Location = new System.Drawing.Point(408, 33);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(71, 24);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 35;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.White;
+            this.pictureBox7.Image = global::Virt_lab_25.Properties.Resources._40_50_1;
+            this.pictureBox7.Location = new System.Drawing.Point(330, 33);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(140, 300);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox7.TabIndex = 34;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Virt_lab_25.Properties.Resources._30_40_1;
+            this.pictureBox6.Location = new System.Drawing.Point(330, 33);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(133, 302);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox6.TabIndex = 28;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(156, 22);
+            this.toolStripButton2.Text = "Методические материалы";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(175, 22);
+            this.toolStripButton1.Text = "Порядок выполнения работы";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(66, 22);
+            this.toolStripButton3.Text = "Протокол";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Virt_lab_25.Properties.Resources._30_50;
+            this.pictureBox5.Location = new System.Drawing.Point(330, 33);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(133, 319);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 26;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Virt_lab_25.Properties.Resources.T;
+            this.pictureBox4.Location = new System.Drawing.Point(16, 355);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Virt_lab_25.Properties.Resources.g;
+            this.pictureBox3.Location = new System.Drawing.Point(122, 355);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Virt_lab_25.Properties.Resources.Screenshot_2;
+            this.pictureBox2.Location = new System.Drawing.Point(611, -2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(134, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox1.Location = new System.Drawing.Point(469, 74);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(419, 242);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1193, 513);
+            this.ClientSize = new System.Drawing.Size(895, 417);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -481,7 +498,6 @@ namespace Virt_lab_25
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.closemain);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа \"Определение ускорения свободного падения\"";
@@ -492,6 +508,8 @@ namespace Virt_lab_25
             ((System.ComponentModel.ISupportInitialize)(this.timer4)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -529,7 +547,6 @@ namespace Virt_lab_25
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox5;
-        public System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -543,6 +560,9 @@ namespace Virt_lab_25
         public System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 
